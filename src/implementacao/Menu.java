@@ -66,6 +66,40 @@ public class Menu {
 				tamanho_res = tamanho_orig * 2;
 				matriz_res = new int[tamanho_res][tamanho_res];
 				
+				int m = -1, n = 0;
+				for (int i = 0; i < tamanho_res; i++)
+				{
+					if (i%2 == 0)
+						m++;
+					n = 0;
+					for (int j = 0; j < tamanho_res; j++)
+					{
+						
+						if (i % 2 == 0 && j % 2 == 0)
+						{
+							matriz_res[i][j] = matriz_orig[m][n];
+						}
+						else if (i % 2 == 0 && j % 2 != 0)
+						{
+							matriz_res[i][j] = matriz_orig[m][n];
+							n++;
+						}
+						else
+						{
+							matriz_res[i][j] = matriz_res[i-1][j];
+						}
+					}
+				}
+				
+				for (int i = 0; i < tamanho_res; i++)
+				{
+					for (int j = 0; j < tamanho_res; j++)
+					{
+						System.out.print(matriz_res[i][j] + " ");
+					}
+					System.out.println();
+				}
+								
 				break;
 				
 				case 3: System.out.println("Redução Interpolação\n\n");
