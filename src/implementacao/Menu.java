@@ -61,9 +61,11 @@ public class Menu {
 				
 				break;
 				
+				
 				case 2: System.out.println("Ampliação Vizinho\n\n");
 				tamanho_res = tamanho_orig * 2;
 				matriz_res = new int[tamanho_res][tamanho_res];
+				
 				break;
 				
 				case 3: System.out.println("Redução Interpolação\n\n");
