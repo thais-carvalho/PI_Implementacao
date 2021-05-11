@@ -44,7 +44,19 @@ public class Menu {
 				matriz_res = new int[tamanho_res][tamanho_res];
 				for(int i = 0, m = 0; i < tamanho_res; i++, m+=2)
 				{
-					
+					for (int j = 0, n = 0; j < tamanho_res; j++, n+=2)
+					{
+						matriz_res[i][j] = matriz_orig[m][n];
+					}
+				}
+				
+				for (int i = 0; i < tamanho_res; i++)
+				{
+					for (int j = 0; j < tamanho_res; j++)
+					{
+						System.out.print(matriz_res[i][j] + " ");
+					}
+					System.out.println();
 				}
 				
 				break;
