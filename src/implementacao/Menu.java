@@ -40,7 +40,7 @@ public class Menu {
 			switch (operacao)
 			{
 				case 1: System.out.println("Redução Vizinho\n\n");
-				tamanho_res = tamanho_orig/2;
+				tamanho_res = (tamanho_orig/2) + (tamanho_orig%2);
 				matriz_res = new int[tamanho_res][tamanho_res];
 				for(int i = 0, m = 0; i < tamanho_res; i++, m+=2)
 				{
