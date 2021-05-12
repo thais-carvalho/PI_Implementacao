@@ -2,7 +2,7 @@ package implementacao;
 import java.util.*;
 public class Menu {
 
-	static int operacao = 1, tamanho_orig, tamanho_res, num;
+	static int operacao = 1, tamanho_orig, tamanho_res, m, n;
 	static int matriz_orig[][], matriz_res[][];
 	static Scanner scan = new Scanner(System.in);
 	
@@ -66,7 +66,8 @@ public class Menu {
 				tamanho_res = tamanho_orig * 2;
 				matriz_res = new int[tamanho_res][tamanho_res];
 				
-				int m = -1, n = 0;
+				m = -1;
+				n = 0;
 				for (int i = 0; i < tamanho_res; i++)
 				{
 					if (i%2 == 0)
@@ -103,6 +104,26 @@ public class Menu {
 				break;
 				
 				case 3: System.out.println("\n\nRedução Interpolação\n\n");
+				tamanho_res = (tamanho_orig / 2);
+				matriz_res = new int [tamanho_res][tamanho_res];
+				m = 0;
+				for (int i = 0; i < tamanho_res; i++, m+=2)
+				{
+					n = 0;
+					for (int j = 0; j < tamanho_res; j++, n+=2)
+					{
+						matriz_res[i][j] = (matriz_orig[m][n] + matriz_orig[m][n + 1] + matriz_orig[m + 1][n] + matriz_orig[m + 1][n + 1])/4;
+					}
+				}
+				
+				for (int i = 0; i < tamanho_res; i++)
+				{
+					for (int j = 0; j < tamanho_res; j++)
+					{
+						System.out.print(matriz_res[i][j] + " ");
+					}
+					System.out.println();
+				}
 				break;
 				
 				case 4: System.out.println("\n\nAmpliação Interpolação\n\n");
