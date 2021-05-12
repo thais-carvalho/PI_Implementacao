@@ -28,6 +28,7 @@ public class Menu {
 					}
 				}
 				
+				System.out.println("\n\nMatriz Original:\n");
 				for (int i = 0; i < tamanho_orig; i++)
 				{
 					for (int j = 0; j < tamanho_orig; j++)
@@ -39,7 +40,7 @@ public class Menu {
 			}
 			switch (operacao)
 			{
-				case 1: System.out.println("\n\nRedução Vizinho\n\n");
+				case 1: System.out.println("\n\nRedução por Vizinho Mais Próximo\n");
 				tamanho_res = (tamanho_orig/2) + (tamanho_orig%2);
 				matriz_res = new int[tamanho_res][tamanho_res];
 				for(int i = 0, m = 0; i < tamanho_res; i++, m+=2)
@@ -62,7 +63,7 @@ public class Menu {
 				break;
 				
 				
-				case 2: System.out.println("\n\nAmpliação Vizinho\n\n");
+				case 2: System.out.println("\n\nAmpliação por Vizinho Mais Próximo\n");
 				tamanho_res = tamanho_orig * 2;
 				matriz_res = new int[tamanho_res][tamanho_res];
 				
@@ -91,7 +92,6 @@ public class Menu {
 						}
 					}
 				}
-				
 				for (int i = 0; i < tamanho_res; i++)
 				{
 					for (int j = 0; j < tamanho_res; j++)
@@ -103,7 +103,7 @@ public class Menu {
 								
 				break;
 				
-				case 3: System.out.println("\n\nRedução Interpolação\n\n");
+				case 3: System.out.println("\n\nRedução por Interpolação Bilinear\n");
 				tamanho_res = (tamanho_orig / 2);
 				matriz_res = new int [tamanho_res][tamanho_res];
 				m = 0;
@@ -128,7 +128,7 @@ public class Menu {
 				}
 				break;
 				
-				case 4: System.out.println("\n\nAmpliação Interpolação\n\n");
+				case 4: System.out.println("\n\nAmpliação por Interpolação Bilinear\n");
 				tamanho_res = tamanho_orig * 2 - 1;
 				matriz_res = new int [tamanho_res][tamanho_res];
 				m = -1;
