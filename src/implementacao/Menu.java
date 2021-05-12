@@ -71,7 +71,7 @@ public class Menu {
 				for (int i = 0; i < tamanho_res; i++)
 				{
 					if (i%2 == 0)
-						m++;
+					m++;
 					n = 0;
 					for (int j = 0; j < tamanho_res; j++)
 					{
@@ -109,6 +109,8 @@ public class Menu {
 				m = 0;
 				for (int i = 0; i < tamanho_res; i++, m+=2)
 				{
+					if (i % 2 == 0)
+						m++;
 					n = 0;
 					for (int j = 0; j < tamanho_res; j++, n+=2)
 					{
@@ -127,6 +129,47 @@ public class Menu {
 				break;
 				
 				case 4: System.out.println("\n\nAmpliação Interpolação\n\n");
+				tamanho_res = tamanho_orig * 2 - 1;
+				matriz_res = new int [tamanho_res][tamanho_res];
+				m = -1;
+				n = 0;
+				for (int i = 0; i < tamanho_res; i++)
+				{
+					if (i % 2 == 0)
+						m++;
+					n = 0;
+					for (int j = 0; j < tamanho_res; j++)
+					{
+						if (i % 2 == 0 && j % 2 == 0)
+						{
+							matriz_res[i][j] = matriz_orig[m][n];
+						}
+						else if (i % 2 == 0 && j % 2 != 0)
+						{
+							matriz_res[i][j] = (matriz_orig[m][n] + matriz_orig[m][n+1])/2;
+							n++;
+						}
+						else if(i % 2 != 0 & j % 2 == 0)
+						{
+							matriz_res[i][j] = (matriz_orig[m][n] + matriz_orig[m+1][n])/2;
+						}
+						else
+						{
+							matriz_res[i][j] = (matriz_orig[m][n] + matriz_orig[m][n+1] + matriz_orig[m+1][n] + matriz_orig[m+1][n+1])/4;
+							n++;
+						}
+					}
+				}
+				
+				for (int i = 0; i < tamanho_res; i++)
+				{
+					for (int j = 0; j < tamanho_res; j++)
+					{
+						System.out.print(matriz_res[i][j] + " ");
+					}
+					System.out.println();
+				}
+				
 				break;
 				
 				case 0: System.out.println("\n\nPrograma encerrado\n\n");
