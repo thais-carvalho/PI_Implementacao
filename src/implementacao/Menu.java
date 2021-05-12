@@ -10,7 +10,7 @@ public class Menu {
 	{
 		while (operacao != 0)
 		{
-			System.out.println("Selecione uma operação:\n1 - Redução por vizinho mais próximo\n2 - Ampliação por vizinho mais próximo\n3 - Redução por interpolação bilinear\n4 - Ampliação por interpolação bilinear\n0 - Sair\n\n");
+			System.out.println("\n\nSelecione uma operação:\n1 - Redução por vizinho mais próximo\n2 - Ampliação por vizinho mais próximo\n3 - Redução por interpolação bilinear\n4 - Ampliação por interpolação bilinear\n0 - Sair\n\n");
 			operacao = scan.nextInt();
 			
 			if (operacao > 0 && operacao < 5)
@@ -39,7 +39,7 @@ public class Menu {
 			}
 			switch (operacao)
 			{
-				case 1: System.out.println("Redução Vizinho\n\n");
+				case 1: System.out.println("\n\nRedução Vizinho\n\n");
 				tamanho_res = (tamanho_orig/2) + (tamanho_orig%2);
 				matriz_res = new int[tamanho_res][tamanho_res];
 				for(int i = 0, m = 0; i < tamanho_res; i++, m+=2)
@@ -62,7 +62,7 @@ public class Menu {
 				break;
 				
 				
-				case 2: System.out.println("Ampliação Vizinho\n\n");
+				case 2: System.out.println("\n\nAmpliação Vizinho\n\n");
 				tamanho_res = tamanho_orig * 2;
 				matriz_res = new int[tamanho_res][tamanho_res];
 				
@@ -102,13 +102,13 @@ public class Menu {
 								
 				break;
 				
-				case 3: System.out.println("Redução Interpolação\n\n");
+				case 3: System.out.println("\n\nRedução Interpolação\n\n");
 				break;
 				
-				case 4: System.out.println("Ampliação Interpolação\n\n");
+				case 4: System.out.println("\n\nAmpliação Interpolação\n\n");
 				break;
 				
-				case 0: System.out.println("Programa encerrado\n\n");
+				case 0: System.out.println("\n\nPrograma encerrado\n\n");
 				break;
 				
 				default: System.out.println("Opção Inválida\n\n");
