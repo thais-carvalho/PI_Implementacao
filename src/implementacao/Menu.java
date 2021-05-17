@@ -109,8 +109,6 @@ public class Menu {
 				m = 0;
 				for (int i = 0; i < tamanho_res; i++, m+=2)
 				{
-					if (i % 2 == 0)
-						m++;
 					n = 0;
 					for (int j = 0; j < tamanho_res; j++, n+=2)
 					{
